@@ -17,10 +17,10 @@ try {
 			socket.connect(isa);
 			System.out.println("Je suis un client connecté");
 			
-			// Lecture d'un entier
+			//Lecture d'un entier
 			Scanner scanner = new Scanner(System.in);
 			
-			// Flux de communication
+			 //Flux de communication
 			OutputStream os = socket.getOutputStream();
 			InputStream is = socket.getInputStream();
 			ObjectOutputStream oos = new ObjectOutputStream(os);
@@ -29,7 +29,7 @@ try {
 			Operation O1= new Operation(100,2,'*');
 			oos.writeObject(O1);
 			
-			// Reçeption de l'objet
+			 //Reçeption de l'objet
 			O1 = (Operation)ois.readObject();
 			System.out.println("Résultat = "+O1.getResult());
 		
@@ -40,6 +40,7 @@ try {
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+
 
 		
 
