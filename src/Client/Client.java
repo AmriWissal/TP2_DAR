@@ -23,12 +23,12 @@ try {
 			 //Flux de communication
 			OutputStream os = socket.getOutputStream();
 			InputStream is = socket.getInputStream();
+			// Flux de traitement
 			ObjectOutputStream oos = new ObjectOutputStream(os);
 			ObjectInputStream ois = new ObjectInputStream(is);
 			//Envoie de objet
 			Operation O1= new Operation(100,2,'*');
 			oos.writeObject(O1);
-			
 			 //Reçeption de l'objet
 			O1 = (Operation)ois.readObject();
 			System.out.println("Résultat = "+O1.getResult());
@@ -48,33 +48,33 @@ try {
 	}
 
 
-/** utilisation de inputstreamreader et bufferreader pour recevoir et envoiyer plus d'1 octect 
-//Flux de traitement
-PrintWriter pw = new PrintWriter(os,true);
-InputStreamReader isr = new InputStreamReader(is);
-BufferedReader br = new BufferedReader(isr);
-//Envoie du premier entier
-System.out.println("Tapez Le premier entier");
-int nb1 = scanner.nextInt();
-pw.println(nb1);
-//Envoie du deuxieme entier
-System.out.println("Tapez le deuxieme entier");
-int nb2 = scanner.nextInt();
-pw.println(nb2);
-//Envoie du type d'operation
-String op;
-do {
-	System.out.println("Choix d'operation:");
-	op = scanner.nextLine();
-} while (!(op.equals("+")) && !(op.equals("-")) && !(op.equals("*"))&& !(op.equals("/")));
-pw.println(op);
-//Reçeption du résultat
-String s = br.readLine();
-int result = Integer.parseInt(s);
-//Afficahge du résultat
-System.out.println(nb1+" "+op+" "+nb2+"="+result);
-**/
-
-	}
+				/** utilisation de inputstreamreader et bufferreader pour recevoir et envoyer plus d'1 octect 
+				//Flux de traitement
+				PrintWriter pw = new PrintWriter(os,true);
+				InputStreamReader isr = new InputStreamReader(is);
+				BufferedReader br = new BufferedReader(isr);
+				//Envoie du premier entier
+				System.out.println("Tapez Le premier entier");
+				int nb1 = scanner.nextInt();
+				pw.println(nb1);
+				//Envoie du deuxieme entier
+				System.out.println("Tapez le deuxieme entier");
+				int nb2 = scanner.nextInt();
+				pw.println(nb2);
+				//Envoie du type d'operation
+				String op;
+				do {
+					System.out.println("Choix d'operation:");
+					op = scanner.nextLine();
+				} while (!(op.equals("+")) && !(op.equals("-")) && !(op.equals("*"))&& !(op.equals("/")));
+				pw.println(op);
+				//Reçeption du résultat
+				String s = br.readLine();
+				int result = Integer.parseInt(s);
+				//Afficahge du résultat
+				System.out.println(nb1+" "+op+" "+nb2+"="+result);
+				**/
+				
+					}
 
 
